@@ -1,6 +1,28 @@
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
   --font-serif: "Cormorant Garamond", Georgia, serif;
   --font-sans: "Plus Jakarta Sans", system-ui, sans-serif;
+}
+
+/* Animación de líneas arquitectónicas (duración ralentizada a 2.4s) */
+.reveal-line-left,
+.reveal-line-right {
+  transform: scaleX(0);
+  transition: transform 2.4s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+.reveal-line-left {
+  transform-origin: left;
+}
+
+.reveal-line-right {
+  transform-origin: right;
+}
+
+.reveal-line-left.is-visible,
+.reveal-line-right.is-visible {
+  transform: scaleX(1);
 }
