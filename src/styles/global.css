@@ -6,6 +6,11 @@
   --font-sans: "Plus Jakarta Sans", system-ui, sans-serif;
 }
 
+/* Compensar la altura de la barra de navegación fija (24 = 6rem / 96px) al hacer scroll a los anclas */
+html {
+  scroll-padding-top: 97px; /* Deja 110px de margen superior para que el título respire debajo del header */
+}
+
 /* Animación de líneas arquitectónicas (duración ralentizada a 2.4s) */
 .reveal-line-left,
 .reveal-line-right {
@@ -25,4 +30,10 @@
 .reveal-line-left.is-visible,
 .reveal-line-right.is-visible {
   transform: scaleX(1);
+}
+
+/* Justificar automáticamente todos los párrafos del sitio web */
+p {
+  text-align: justify;
+  hyphens: auto; /* Mejora la separación de palabras en español al justificar */
 }
