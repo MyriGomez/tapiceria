@@ -1,31 +1,31 @@
 ---
-// src/pages/index.astro
+import '../styles/global.css';
+
 const title = "Taller de Tapicería para Interioristas y Proyectos Contract | Andalucía";
 const description = "Taller de tapicería artesanal en Andalucía especializado en la ejecución de proyectos contract y residencial de alta gama para estudios de interiorismo y arquitectura.";
 ---
 
-<html lang="es">
+<html lang="es" class="scroll-smooth">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content={Astro.generator} />
-	<link rel="stylesheet" href="/src/styles/global.css" />
     
     <!-- SEO Meta Tags Primarios B2B -->
     <title>{title}</title>
     <meta name="description" content={description} />
-    <meta name="keywords" content="taller de tapiceria para interioristas, tapiceria contract andalucia, ejecucion mobiliario a medida, tapiceria artesanal alta gama, tapiceria hoteles de lujo" />
+    <meta name="keywords" content="taller de tapiceria para interioristas, proveedor de tapiceria contract, ejecucion de mobiliario a medida, tapiceria artesanal alta gama, mobiliario tapizado hoteles de lujo" />
 
-    <!-- Fuentes elegantes de Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Fuentes externas desde Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
   </head>
 
   <body class="bg-zinc-950 text-zinc-300 font-sans antialiased selection:bg-amber-900 selection:text-amber-100 min-h-screen flex flex-col justify-between">
     
-    <!-- Header / Navegación Elegante -->
+    <!-- Header / Navegación -->
     <header class="border-b border-zinc-900 bg-zinc-950/85 backdrop-blur-md sticky top-0 z-50">
       <div class="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
         <a href="/" class="group">
@@ -56,13 +56,13 @@ const description = "Taller de tapicería artesanal en Andalucía especializado 
         <div class="max-w-7xl mx-auto px-6 relative z-10">
           <div class="max-w-3xl">
             <span class="inline-block text-amber-500 text-xs font-semibold uppercase tracking-[0.25em] mb-4">
-              Socio Técnico de Tapicería en Andalucía
+              Proveedor de Tapicería Contract · Andalucía
             </span>
             <h1 class="font-serif text-4xl md:text-6xl text-zinc-100 font-normal leading-tight mb-8">
-              Ejecución de tapicería artesanal de alta gama para proyectos de interiorismo y contract.
+              Taller de tapicería para interioristas y ejecución de mobiliario a medida.
             </h1>
             <p class="text-zinc-400 text-base md:text-lg leading-relaxed mb-10 font-light max-w-2xl">
-              Materializamos el diseño de arquitectos y estudios de interiorismo con precisión constructiva, respetando los planos, plazos de entrega y especificaciones técnicas para hoteles boutique, villas singulares y residencias de lujo.
+              Materializamos el diseño de arquitectos y estudios de interiorismo con precisión constructiva, respetando planos, plazos de entrega y especificaciones técnicas para hoteles boutique, villas singulares y residencias de lujo.
             </p>
             
             <div class="flex flex-col sm:flex-row gap-4">
@@ -75,9 +75,11 @@ const description = "Taller de tapicería artesanal en Andalucía especializado 
             </div>
           </div>
         </div>
+        
+        <div class="absolute right-0 top-1/2 -translate-y-1/2 w-1/3 h-full bg-gradient-to-l from-amber-950/10 to-transparent pointer-events-none hidden lg:block"></div>
       </section>
 
-      <!-- Propuesta de Valor / Posicionamiento No-Creativo -->
+      <!-- Propuesta de Valor / Posicionamiento Técnico -->
       <section id="oficio" class="py-24 border-b border-zinc-900 bg-zinc-950">
         <div class="max-w-7xl mx-auto px-6">
           <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
@@ -107,7 +109,7 @@ const description = "Taller de tapicería artesanal en Andalucía especializado 
 
               <div>
                 <h3 class="text-sm font-semibold uppercase tracking-wider text-amber-500 mb-3">
-                  Oficio y tradición andaluza
+                  Oficio de tapicería en Andalucía
                 </h3>
                 <p class="text-zinc-400 text-sm leading-relaxed">
                   Dominio del cinchado tradicional, cincha de yute, muelle helicoidal manual, capitoné técnico y patronaje de precisión en pieles y terciopelos de alto gramaje.
@@ -127,7 +129,7 @@ const description = "Taller de tapicería artesanal en Andalucía especializado 
         </div>
       </section>
 
-      <!-- Capacidades Técnicas / Tipologías de Mobiliario -->
+      <!-- Capacidades Técnicas -->
       <section id="capacidades" class="py-24 border-b border-zinc-900 bg-zinc-900/30">
         <div class="max-w-7xl mx-auto px-6">
           <div class="mb-16">
@@ -135,32 +137,32 @@ const description = "Taller de tapicería artesanal en Andalucía especializado 
               Especialidades del Taller
             </span>
             <h2 class="font-serif text-3xl md:text-4xl text-zinc-100">
-              Especialización en mobiliario tapizado a medida
+              Ejecución de mobiliario tapizado a medida
             </h2>
           </div>
 
           <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="border border-zinc-800/80 p-8 bg-zinc-950/60">
+            <div class="border border-zinc-800/80 p-8 bg-zinc-950/60 hover:border-amber-900/40 transition-colors">
               <span class="text-zinc-600 font-serif text-2xl mb-4 block">01</span>
               <h3 class="font-serif text-xl text-zinc-100 mb-3">Paneles y Cabeceros de Gran Formato</h3>
               <p class="text-zinc-400 text-sm leading-relaxed mb-4">
-                Instalaciones verticales para dormitorios principales y suites de hotel. Integración de pasacables, mecanismos y acústica.
+                Instalaciones verticales para dormitorios principales y suites de hotel. Integración de pasacables, mecanismos y aislamiento acústico.
               </p>
-              <span class="text-[11px] uppercase tracking-widest text-amber-500 font-medium">Contrato & Residencial</span>
+              <span class="text-[11px] uppercase tracking-widest text-amber-500 font-medium">Contract & Residencial</span>
             </div>
 
-            <div class="border border-zinc-800/80 p-8 bg-zinc-950/60">
+            <div class="border border-zinc-800/80 p-8 bg-zinc-950/60 hover:border-amber-900/40 transition-colors">
               <span class="text-zinc-600 font-serif text-2xl mb-4 block">02</span>
               <h3 class="font-serif text-xl text-zinc-100 mb-3">Asientos Contract y Bancadas a Medida</h3>
               <p class="text-zinc-400 text-sm leading-relaxed mb-4">
-                Sillería, sofás modulares y bancadas a medida para restaurantes, zonas nobles de hoteles y lobbies con alto desgaste.
+                Sillería, sofás modulares y bancadas para restauración, zonas nobles de hoteles y lobbies con alto desgaste.
               </p>
               <span class="text-[11px] uppercase tracking-widest text-amber-500 font-medium">Uso Intensivo</span>
             </div>
 
-            <div class="border border-zinc-800/80 p-8 bg-zinc-950/60">
+            <div class="border border-zinc-800/80 p-8 bg-zinc-950/60 hover:border-amber-900/40 transition-colors">
               <span class="text-zinc-600 font-serif text-2xl mb-4 block">03</span>
-              <h3 class="font-serif text-xl text-zinc-100 mb-3">Piezas Singulares y Restauración de Autor</h3>
+              <h3 class="font-serif text-xl text-zinc-100 mb-3">Piezas Singulares y Tapicería Bespoke</h3>
               <p class="text-zinc-400 text-sm leading-relaxed mb-4">
                 Tapizado de prototipos, piezas icónicas de diseño contemporáneo o clásico con acabados en piel noble y costuras vistas.
               </p>
@@ -188,14 +190,14 @@ const description = "Taller de tapicería artesanal en Andalucía especializado 
           </div>
 
           <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <div class="border border-zinc-900 bg-zinc-950 p-6">
+            <div class="group border border-zinc-900 bg-zinc-950 p-6">
               <div class="aspect-[16/9] bg-zinc-900 mb-6 flex items-center justify-center text-zinc-700 text-sm font-mono">
                 [ Fotografía de proyecto ]
               </div>
               <span class="text-amber-500 text-[11px] uppercase tracking-widest font-semibold block mb-1">
                 Hotel Boutique · Sevilla
               </span>
-              <h3 class="font-serif text-2xl text-zinc-100 mb-2">
+              <h3 class="font-serif text-2xl text-zinc-100 mb-2 group-hover:text-amber-400 transition-colors">
                 Ejecución de bancadas y suites principales
               </h3>
               <p class="text-zinc-400 text-sm leading-relaxed">
@@ -203,14 +205,14 @@ const description = "Taller de tapicería artesanal en Andalucía especializado 
               </p>
             </div>
 
-            <div class="border border-zinc-900 bg-zinc-950 p-6">
+            <div class="group border border-zinc-900 bg-zinc-950 p-6">
               <div class="aspect-[16/9] bg-zinc-900 mb-6 flex items-center justify-center text-zinc-700 text-sm font-mono">
                 [ Fotografía de proyecto ]
               </div>
               <span class="text-amber-500 text-[11px] uppercase tracking-widest font-semibold block mb-1">
                 Villa Privada · Marbella
               </span>
-              <h3 class="font-serif text-2xl text-zinc-100 mb-2">
+              <h3 class="font-serif text-2xl text-zinc-100 mb-2 group-hover:text-amber-400 transition-colors">
                 Mobiliario bespoke y paneles acústicos
               </h3>
               <p class="text-zinc-400 text-sm leading-relaxed">
@@ -259,7 +261,7 @@ const description = "Taller de tapicería artesanal en Andalucía especializado 
                 <textarea rows="4" class="w-full bg-zinc-950 border border-zinc-800 px-4 py-3 text-sm text-zinc-100 focus:outline-none focus:border-amber-600 transition-colors" placeholder="Describa el tipo de pieza, escala del proyecto o adjunte especificaciones..."></textarea>
               </div>
 
-              <button type="submit" class="w-full py-4 bg-zinc-100 text-zinc-950 font-semibold text-xs uppercase tracking-widest hover:bg-amber-400 transition-colors">
+              <button type="submit" class="w-full py-4 bg-zinc-100 text-zinc-950 font-semibold text-xs uppercase tracking-widest hover:bg-amber-400 transition-colors cursor-pointer">
                 Enviar Solicitud Técnica
               </button>
             </form>
@@ -268,7 +270,7 @@ const description = "Taller de tapicería artesanal en Andalucía especializado 
       </section>
     </main>
 
-    <!-- Footer Sobrio -->
+    <!-- Footer -->
     <footer class="border-t border-zinc-900 bg-zinc-950 py-12">
       <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6 text-xs text-zinc-500">
         <div>
