@@ -1,0 +1,18 @@
+User-agent: *
+Allow: /
+
+# Rastreadores de búsqueda e IA
+User-agent: Googlebot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /

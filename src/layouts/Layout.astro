@@ -29,51 +29,31 @@ const {
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
-
-    <!-- Inicialización del tema claro/oscuro -->
-    <script is:inline>
-      const savedTheme = localStorage.getItem('theme');
-      if (savedTheme === 'dark') {
-        document.documentElement.classList.add('dark');
-      } else {
-        document.documentElement.classList.remove('dark');
-      }
-    </script>
   </head>
 
-  <body class="bg-[#FAF9F6] text-stone-800 dark:bg-zinc-950 dark:text-zinc-300 font-sans antialiased selection:bg-amber-800 selection:text-white dark:selection:bg-amber-900/60 dark:selection:text-amber-100 min-h-screen flex flex-col justify-between transition-colors duration-300">
+  <body class="bg-[#FAF9F6] text-stone-800 font-sans antialiased selection:bg-amber-800 selection:text-white min-h-screen flex flex-col justify-between">
     
     <!-- Navegación Minimalista -->
-    <header class="border-b border-stone-200/80 dark:border-zinc-900 bg-[#FAF9F6]/90 dark:bg-zinc-950/90 backdrop-blur-md sticky top-0 z-50 transition-colors duration-300">
+    <header class="border-b border-stone-200/80 bg-[#FAF9F6]/90 backdrop-blur-md sticky top-0 z-50">
       <div class="max-w-7xl mx-auto px-6 lg:px-12 h-24 flex items-center justify-between">
         <a href="/" class="group flex flex-col">
-          <span class="font-serif text-2xl tracking-[0.2em] uppercase text-stone-900 dark:text-zinc-100 group-hover:text-amber-800 dark:group-hover:text-amber-500 transition-colors">
+          <span class="font-serif text-2xl tracking-[0.2em] uppercase text-stone-900 group-hover:text-amber-800 transition-colors">
             Atelier Tapicería
           </span>
-          <span class="text-[9px] tracking-[0.35em] uppercase text-stone-500 dark:text-zinc-500 mt-0.5">
+          <span class="text-[9px] tracking-[0.35em] uppercase text-stone-500 mt-0.5">
             Andalucía · Ejecución Contract
           </span>
         </a>
 
-        <nav class="hidden md:flex items-center space-x-10 text-[11px] uppercase tracking-[0.2em] font-medium text-stone-600 dark:text-zinc-400">
-          <a href="/#oficio" class="hover:text-stone-950 dark:hover:text-zinc-100 transition-colors">El Oficio</a>
-          <a href="/#capacidades" class="hover:text-stone-950 dark:hover:text-zinc-100 transition-colors">Capacidades</a>
-          <a href="/#especificaciones" class="hover:text-stone-950 dark:hover:text-zinc-100 transition-colors">Especificaciones</a>
-          <a href="/#proyectos" class="hover:text-stone-950 dark:hover:text-zinc-100 transition-colors">Proyectos</a>
+        <nav class="hidden md:flex items-center space-x-10 text-[11px] uppercase tracking-[0.2em] font-medium text-stone-600">
+          <a href="/#oficio" class="hover:text-stone-950 transition-colors">El Oficio</a>
+          <a href="/#capacidades" class="hover:text-stone-950 transition-colors">Capacidades</a>
+          <a href="/#especificaciones" class="hover:text-stone-950 transition-colors">Especificaciones</a>
+          <a href="/#proyectos" class="hover:text-stone-950 transition-colors">Proyectos</a>
         </nav>
 
-        <div class="flex items-center gap-4">
-          <button 
-            id="theme-toggle" 
-            type="button"
-            aria-label="Cambiar modo de iluminación"
-            class="px-3.5 py-3 text-[10px] uppercase tracking-[0.2em] font-medium border border-stone-200 dark:border-zinc-800 text-stone-600 dark:text-zinc-400 hover:border-stone-400 dark:hover:border-zinc-600 hover:text-stone-900 dark:hover:text-zinc-100 transition-colors cursor-pointer"
-          >
-            <span class="dark:hidden">Modo Oscuro</span>
-            <span class="hidden dark:inline">Modo Claro</span>
-          </button>
-
-          <a href="/#contacto" class="px-6 py-3 text-[11px] uppercase tracking-[0.2em] font-medium border border-stone-300 dark:border-zinc-800 text-stone-900 dark:text-zinc-200 hover:border-stone-900 hover:bg-stone-900 hover:text-[#FAF9F6] dark:hover:border-amber-600/60 dark:hover:bg-transparent dark:hover:text-amber-400 transition-all">
+        <div class="flex items-center">
+          <a href="/#contacto" class="px-6 py-3 text-[11px] uppercase tracking-[0.2em] font-medium border border-stone-300 text-stone-900 hover:border-stone-900 hover:bg-stone-900 hover:text-[#FAF9F6] transition-all">
             Colaborar
           </a>
         </div>
@@ -85,11 +65,11 @@ const {
     </main>
 
     <!-- Footer Arquitectónico -->
-    <footer class="border-t border-stone-200 dark:border-zinc-900 bg-[#F4F2EC] dark:bg-zinc-950 py-16 transition-colors duration-300">
+    <footer class="border-t border-stone-200 bg-[#F4F2EC] py-16">
       <div class="max-w-7xl mx-auto px-6 lg:px-12">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-10 pb-12 border-b border-stone-200 dark:border-zinc-900 text-xs text-stone-600 dark:text-zinc-500">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10 pb-12 border-b border-stone-200 text-xs text-stone-600">
           <div>
-            <span class="font-serif text-lg tracking-widest uppercase text-stone-900 dark:text-zinc-200 block mb-3">
+            <span class="font-serif text-lg tracking-widest uppercase text-stone-900 block mb-3">
               Atelier Tapicería
             </span>
             <p class="leading-relaxed max-w-xs font-light">
@@ -97,7 +77,7 @@ const {
             </p>
           </div>
           <div>
-            <span class="text-[10px] uppercase tracking-[0.25em] text-stone-900 dark:text-zinc-400 font-semibold block mb-3">
+            <span class="text-[10px] uppercase tracking-[0.25em] text-stone-900 font-semibold block mb-3">
               Especialidades B2B
             </span>
             <ul class="space-y-2 font-light">
@@ -107,7 +87,7 @@ const {
             </ul>
           </div>
           <div>
-            <span class="text-[10px] uppercase tracking-[0.25em] text-stone-900 dark:text-zinc-400 font-semibold block mb-3">
+            <span class="text-[10px] uppercase tracking-[0.25em] text-stone-900 font-semibold block mb-3">
               Taller & Oficina Técnica
             </span>
             <p class="font-light leading-relaxed">
@@ -116,23 +96,15 @@ const {
             </p>
           </div>
         </div>
-        <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-stone-500 dark:text-zinc-600 tracking-wider">
+        <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-stone-500 tracking-wider">
           <span>&copy; {new Date().getFullYear()} Atelier Tapicería. Todos los derechos reservados.</span>
           <span>Confidencialidad garantizada para estudios prescriptores.</span>
         </div>
       </div>
     </footer>
 
-   <!-- Script global de temas y animación por Scroll optimizada -->
+    <!-- Script global de animación de líneas por Scroll -->
     <script>
-      // Cambio de Tema Claro / Oscuro
-      const toggleBtn = document.getElementById('theme-toggle');
-      toggleBtn?.addEventListener('click', () => {
-        const isDark = document.documentElement.classList.toggle('dark');
-        localStorage.setItem('theme', isDark ? 'dark' : 'light');
-      });
-
-      // Animación de líneas al hacer scroll (Se ejecuta una única vez al entrar en pantalla)
       const observerOptions = {
         root: null,
         rootMargin: '0px',
@@ -144,14 +116,44 @@ const {
           if (entry.isIntersecting) {
             entry.target.classList.add('is-visible');
           } else {
-            entry.target.classList.remove('is-visible'); // Se oculta al salir de pantalla para repetirse al volver
+            entry.target.classList.remove('is-visible');
           }
         });
       }, observerOptions);
 
-      // Seleccionar todas las líneas marcadas
       document.querySelectorAll('.reveal-line-left, .reveal-line-right').forEach(line => {
         lineObserver.observe(line);
+      });
+    </script>
+
+    <!-- Botón Back to Top Minimalista -->
+    <button 
+      id="back-to-top" 
+      aria-label="Volver arriba"
+      class="fixed bottom-8 right-8 z-40 opacity-0 translate-y-4 pointer-events-none transition-all duration-500 w-12 h-12 bg-[#FAF9F6]/90 backdrop-blur-md border border-stone-200 text-stone-600 hover:text-stone-900 hover:border-stone-900 flex items-center justify-center text-2xl shadow-sm cursor-pointer"
+    >
+      <span>↑</span>
+    </button>
+
+    <script>
+      // Control de aparición del botón Back to Top según el scroll
+      const backToTopBtn = document.getElementById('back-to-top');
+
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 500) {
+          backToTopBtn?.classList.remove('opacity-0', 'translate-y-4', 'pointer-events-none');
+          backToTopBtn?.classList.add('opacity-100', 'translate-y-0');
+        } else {
+          backToTopBtn?.classList.add('opacity-0', 'translate-y-4', 'pointer-events-none');
+          backToTopBtn?.classList.remove('opacity-100', 'translate-y-0');
+        }
+      });
+
+      backToTopBtn?.addEventListener('click', () => {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
       });
     </script>
 
