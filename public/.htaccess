@@ -1,0 +1,11 @@
+# Bloquear completamente el acceso público al archivo de registro de visitas
+<Files "registro_visitas_jhfg8vsdgf7.txt">
+    Require all denied
+</Files>
+
+# Permitir que visitas.php solo se ejecute mediante peticiones POST internas (bloqueando acceso directo por navegador)
+<Files "visitas-987geigt08q7e.php">
+    <LimitExcept POST>
+        Require all denied
+    </LimitExcept>
+</Files>

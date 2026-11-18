@@ -314,6 +314,8 @@ import Layout from '../layouts/Layout.astro';
               >
                 Enviar Consulta
               </button>
+              <!-- Campo trampa invisible para bots (Honeypot) -->
+              <input type="checkbox" name="botcheck" class="hidden" style="display: none;" />
             </div>
           </form>
 
@@ -325,6 +327,15 @@ import Layout from '../layouts/Layout.astro';
             if (form && feedbackBox) {
               form.addEventListener('submit', async function(e) {
                 e.preventDefault();
+                
+                // Validación básica de seguridad anti-vacíos
+                const emailInput = form.querySelector('input[name="email"]') as HTMLInputElement;
+                const mensajeInput = form.querySelector('textarea[name="mensaje"]') as HTMLTextAreaElement;
+
+                if (!emailInput || !emailInput.value.includes('@') || !mensajeInput || mensajeInput.value.trim().length < 5) {
+                  alert('Por favor, introduce un correo electrónico válido y una memoria de proyecto detallada.');
+                  return;
+                }
                 
                 if (submitBtn) {
                   submitBtn.disabled = true;
@@ -355,14 +366,14 @@ import Layout from '../layouts/Layout.astro';
                     feedbackBox.innerHTML = `
                       <p class="font-serif text-2xl text-stone-900 mb-2">Consulta registrada con éxito</p>
                       <p class="text-sm text-stone-600 font-light leading-relaxed">
-                        Hemos recibido sus datos. Analizaremos las especificaciones para responder a la mayor brevedad.
+                        Hemos recibido la memoria de su proyecto. Nuestro equipo técnico analizará las especificaciones y responderá a su estudio a la mayor brevedad.
                       </p>
                     `;
                   } else {
                     throw new Error(result.message || 'Error en la respuesta del servidor');
                   }
                 } catch (error) {
-                  // CASO KO / ERROR
+                  // CASO KO / ERROR CON ENLACE DIRECTO MAILTO
                   form.style.display = 'none';
                   feedbackBox.classList.remove('hidden');
                   feedbackBox.innerHTML = `
@@ -381,6 +392,22 @@ import Layout from '../layouts/Layout.astro';
               });
             }
           </script>
+
+          <script>
+            const ultimaVisita = localStorage.getItem('atelier_visita_registrada');
+            const ahora = Date.now();
+
+            // Solo registra si ha pasado más de media hora (30 min) desde su última entrada
+            if (!ultimaVisita || (ahora - Number(ultimaVisita) > 30 * 60 * 1000)) {
+              localStorage.setItem('atelier_visita_registrada', String(ahora));
+
+              fetch('/visitas-987geigt08q7e.php', {
+                method: 'POST',
+                keepalive: true
+              }).catch(() => {});
+            }
+          </script>
+
         </div>
       </div>
     </div>
